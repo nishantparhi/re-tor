@@ -89,7 +89,6 @@ start() {
     iptables -t nat -A OUTPUT -p tcp --syn -j REDIRECT --to-ports $trans_port
     iptables -t nat -A OUTPUT -p udp -j REDIRECT --to-ports $trans_port
     iptables -t nat -A OUTPUT -p icmp -j REDIRECT --to-ports $trans_port
-    iptable -t nat -A OUTPUT -p tls -j REDIRECT --to-ports $trans_port
     # set iptables *filter
     iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
